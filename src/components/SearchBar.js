@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchBar({onCategoryChange}) {
+function SearchBar({ onCategoryChange, sortBy }) {
   return (
     <div>
       <strong>Sort by:</strong>
@@ -10,7 +10,9 @@ function SearchBar({onCategoryChange}) {
           value="Alphabetically"
           name="sort"
           checked={null}
-          onChange={null}
+          onChange={() => {
+            sortBy('Alphabetically')
+          }}
         />
         Alphabetically
       </label>
@@ -20,7 +22,9 @@ function SearchBar({onCategoryChange}) {
           value="Price"
           name="sort"
           checked={null}
-          onChange={null}
+          onChange={() => {
+            sortBy('Price')
+          }}
         />
         Price
       </label>
